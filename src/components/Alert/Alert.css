@@ -1,0 +1,30 @@
+.alert{
+    border-radius: 20px;
+    padding: 10px;
+    margin: 12px;
+    max-width: 300px;
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.alert-warning{
+    background-color: rgb(255, 196, 0);
+}
+
+.alert-success{
+    background-color: rgb(0, 160, 64);
+
+}
+
+.alert-info{
+    background-color: rgb(49, 97, 255);
+
+}
+
+.alert-error{
+    background-color: rgb(218, 25, 0);
+
+}
