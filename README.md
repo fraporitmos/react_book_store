@@ -3,4 +3,5 @@
 - Usar className para indicar una clase de css
 
 # Ejecutar aplicacion de React
+- npm i
 - npm run dev
