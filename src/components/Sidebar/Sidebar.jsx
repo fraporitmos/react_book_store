@@ -14,24 +14,28 @@ const Sidebar = () => {
     <BrowserRouter>
       <div className="w-full bg-menu content z-10">
         <div className="px-12 py-6">
-          <SlMenu color="white" size={40} onClick={() => setIsOpen(!open)} />
+          <SlMenu color="white" size={40} onClick={() =>{setIsOpen(!open)}} />
         </div>
         <Menu
           customBurgerIcon={false}
           isOpen={open}
           overlayClassName={"custom-overlay"}
         >
-          <Link id="home" className="menu-item" to="/libros">
+          <Link className="menu-item" to="/libros">
             Libros
           </Link>
-          <Link id="about" className="menu-item" to="/comics">
+          <Link className="menu-item" to="/comics">
             Commics
           </Link>
-          <Link id="contact" className="menu-item" to="/revistas">
+          <Link  className="menu-item" to="/revistas">
             Revistas
+          </Link>
+          <Link  className="menu-item" to="/comics">
+            Carrito
           </Link>
         </Menu>
       </div>
+
       <Routes>
         <Route path="/" element={<BooksScreen />} />
         <Route path="/libros" element={<BooksScreen />} />
