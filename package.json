@@ -12,12 +12,15 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.0.3",
     "autoprefixer": "^10.4.20",
+    "lottie-react": "^2.4.1",
     "postcss": "^8.5.1",
     "react": "^18.3.1",
     "react-burger-menu": "^3.1.0",
     "react-dom": "^18.3.1",
     "react-icons": "^5.4.0",
     "react-router-dom": "^7.1.5",
+    "sweetalert2": "^11.16.0",
+    "sweetalert2-react-content": "^5.1.0",
     "tailwindcss": "^4.0.3"
   },
   "devDependencies": {

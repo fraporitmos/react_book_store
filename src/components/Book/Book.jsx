@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import { IoIosCart } from "react-icons/io";
+import { CartContext } from "../../context/CartContext";
+import Swal from "sweetalert2";
 
-const Book = ({ name, description,author, editorial,price,img }) => {
+const Book = ({ name, description,author, editorial,price,img, book }) => {
+  
+  const {cart, addBookCart} = useContext(CartContext);
+
+  const addToCart = () =>{
+    const existBook = cart.some( item => item._id === book._id )
+    if(existBook){
+      Swal.fire({
+        title : "El libro ya está en tu carrito ",
+        text: `El libro "${name}" ya se encuentra en la lista de tu carrito.`,
+        icon: 'error'
+      })
+    }else{
+      addBookCart([...cart, book])
+    }
+  }
+
   return (
     <div className="mx-8 px-4 py-4 mt-6 bg-white rounded-lg shadow-lg sm:w-1/2 md:w-1/2 lg:w-1/4 dark:bg-gray-800">
       <div className="flex items-center justify-center">
@@ -28,6 +46,7 @@ const Book = ({ name, description,author, editorial,price,img }) => {
 
       <button
         type="button"
+        onClick={ ()=>{  addToCart()  }}
         className="py-2 px-4 mt-2 flex justify-center items-center  bg-gray-600 hover:bg-gray-700 focus:ring-gray-500 focus:ring-offset-gray-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
       >
         <IoIosCart size={26} />

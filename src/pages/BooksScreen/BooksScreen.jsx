@@ -3,6 +3,7 @@ import Book from "../../components/Book/Book";
 import Loading from "../../components/Loading/Loading";
 
 const BooksScreen = () => {
+
   const [books, setBooks] = useState([]);
   const effectCalled = useRef(false);
 
@@ -32,14 +33,14 @@ const BooksScreen = () => {
       ? 
        books.map( item => (
         <Book 
-        key={item._id}
-        name= {item.name}
-        description={item.description}
-        price={item.price}
-        editorial={item.editorial}
-        img={item.img}
-        author={item.author}
-
+          key={item._id}
+          name= {item.name}
+          description={item.description}
+          price={item.price}
+          editorial={item.editorial}
+          img={item.img}
+          author={item.author}
+          book={item}
         />
        ) )
       : <Loading />
