@@ -24,11 +24,11 @@ const Book = ({ name, description,author, editorial,price,img, book }) => {
     <div className="mx-8 px-4 py-4 mt-6 bg-white rounded-lg shadow-lg sm:w-1/2 md:w-1/2 lg:w-1/4 dark:bg-gray-800">
       <div className="flex items-center justify-center">
         <img
-          className="w-1/2"
+          className="w-1/2 h-72  object-cover"
           src={img}
         />
       </div>
-        <h3 className="my-4 text-2xl font-semibold text-gray-700 sm:text-xl dark:text-white">
+        <h3 className="my-4 text-2xl line-clamp-1 font-semibold text-gray-700 sm:text-xl dark:text-white">
           {name}
         </h3>
 

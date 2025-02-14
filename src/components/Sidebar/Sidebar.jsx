@@ -9,6 +9,7 @@ import MagazinesScreen from "../../pages/MagazinesScreen/MagazinesScreen";
 import { CartContext } from "../../context/CartContext";
 import { FaShoppingCart } from "react-icons/fa";
 import CartScreen from "../../pages/CartScreen/CartScreen";
+import PaymentScreen from "../../pages/PaymentScreen/PaymentScreen";
 
 const Sidebar = () => {
   const [open, setIsOpen] = useState(false);
@@ -58,6 +59,8 @@ const Sidebar = () => {
         <Route path="/comics" element={<ComicsScreen />} />
         <Route path="/revistas" element={<MagazinesScreen />} />
         <Route path="/carrito" element={<CartScreen />} />
+        <Route path="/success-pay" element={<PaymentScreen />} />
+
       </Routes>
     </BrowserRouter>
   );

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Sidebar from './components/Sidebar/Sidebar'
 import { CartContext } from './context/CartContext'
+import { PayPalScriptProvider } from '@paypal/react-paypal-js'
 
 const App = () => {
 
@@ -8,7 +9,9 @@ const App = () => {
 
   return (
       <CartContext.Provider value={{cart, addBookCart}}>
-          <Sidebar/>
+         <PayPalScriptProvider>
+             <Sidebar/>
+         </PayPalScriptProvider>
       </CartContext.Provider>
   )
 }
