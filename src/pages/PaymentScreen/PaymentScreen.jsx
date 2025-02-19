@@ -16,7 +16,7 @@ const PaymentScreen = () => {
 
       <button 
       onClick={()=>{navigate("/libros")}}
-      class="flex mt-6 cursor-pointer items-center px-6 py-2  transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none">
+      className="flex mt-6 cursor-pointer items-center px-6 py-2  transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none">
         <FaHome size={22} />
         <span className="ml-2">Ir a Home</span>
       </button>

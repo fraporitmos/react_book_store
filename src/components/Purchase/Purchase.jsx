@@ -1,12 +1,32 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FaPlus } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa6";
+import { CartContext } from "../../context/CartContext";
+import Swal from "sweetalert2";
 
-const Purchase = ({ name, price, img }) => {
+const Purchase = ({ _id, name, price, img }) => {
   const [quantity, setQuantity] = useState(1);
+  const { cart, addBookCart } = useContext(CartContext);
 
   const incrementQuantity = () => setQuantity((prev) => prev + 1);
-  const decrementQuantity = () => setQuantity((prev) => Math.max(1, prev - 1));
+
+  const decrementQuantity = () => {
+    if (quantity <= 1) {
+      const newArray = cart.filter((item) => item._id !== _id);
+
+      Swal.fire({
+        title: "Eliminar libro del carrito ",
+        text: `El libro "${name}" se eliminará de su carrito.`,
+        icon: "warning",
+        preConfirm: () => {
+          addBookCart(newArray);
+        },
+        showCancelButton: true,
+      });
+    } else {
+      setQuantity((prev) => Math.max(1, prev - 1));
+    }
+  };
 
   const subtotal = price * quantity;
   return (
@@ -26,7 +46,7 @@ const Purchase = ({ name, price, img }) => {
               variant="outline"
               size="icon"
               onClick={decrementQuantity}
-              className="h-8 w-8"
+              className="h-8 w-8 cursor-pointer border-2 border-gray-800 flex justify-center items-center rounded-lg hover:bg-gray-600 hover:text-white"
               aria-label="Decrease quantity"
             >
               <FaMinus className="h-4 w-4" />
@@ -36,8 +56,8 @@ const Purchase = ({ name, price, img }) => {
               variant="outline"
               size="icon"
               onClick={incrementQuantity}
-              className="h-8 w-8"
-              aria-label="Increase quantity"
+              className="h-8 w-8 cursor-pointer border-2 border-gray-800 flex justify-center items-center rounded-lg hover:bg-gray-600 hover:text-white"
+              aria-label="Increase quantity "
             >
               <FaPlus className="h-4 w-4" />
             </button>
@@ -52,8 +72,6 @@ const Purchase = ({ name, price, img }) => {
             <span className="text-xl font-bold text-primary">S/{subtotal}</span>
           </div>
         </div>
-
-
       </div>
     </div>
   );

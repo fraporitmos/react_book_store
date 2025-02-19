@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext} from "react";
 import Empty from "../../assets/emptycart.json";
 import Lottie from "lottie-react";
 import { CartContext } from "../../context/CartContext";
@@ -7,13 +7,7 @@ import { IoLogoWhatsapp } from "react-icons/io";
 import { PaypalWrapper } from "../../components/Paypal/PaypalWrapper";
 
 const CartScreen = () => {
-  const { cart, addBookCart } = useContext(CartContext);
-  const effectCalled = useRef(false);
-
-  useEffect(() => {
-    if (effectCalled.current) return;
-    effectCalled.current = true;
-  }, []);
+  const { cart } = useContext(CartContext);
 
   const buyWithWhatsApp = () => {
     const numberPhone = "51947254438";
@@ -33,7 +27,7 @@ const CartScreen = () => {
     <div className="pt-28">
       {cart.length > 0 ? (
         cart.map((item) => (
-          <Purchase name={item.name} price={item.price} img={item.img} />
+          <Purchase key={item._id} _id={item._id} name={item.name} price={item.price} img={item.img} />
         ))
       ) : (
         <div className="flex h-screen items-center justify-center flex-col ">
@@ -51,7 +45,7 @@ const CartScreen = () => {
               buyWithWhatsApp();
             }}
             type="button"
-            class="py-2 px-4 flex w-96 justify-center items-center  bg-green-600 hover:bg-green-700 focus:ring-green-500 focus:ring-offset-green-200 text-white  transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+            className="py-2 px-4 flex w-96 justify-center items-center  bg-green-600 hover:bg-green-700 focus:ring-green-500 focus:ring-offset-green-200 text-white  transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
           >
             <IoLogoWhatsapp size={32} />
             <span className="ml-2">Pedir por WhatsApp</span>

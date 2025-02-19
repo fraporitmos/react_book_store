@@ -1,0 +1,84 @@
+{
+  "id": "99L3450307628314R",
+  "status": "COMPLETED",
+  "payment_source": {
+    "paypal": {
+      "email_address": "test@gmail.com",
+      "account_id": "UZJWX7QVQYRAS",
+      "account_status": "UNVERIFIED",
+      "name": { "given_name": "Richard", "surname": "Mostacero" },
+      "address": { "country_code": "PE" },
+      "app_switch_eligibility": false
+    }
+  },
+  "purchase_units": [
+    {
+      "reference_id": "default",
+      "shipping": {
+        "name": { "full_name": "Richard Mostacero" },
+        "address": {
+          "address_line_1": "Calle San Marcos #223",
+          "address_line_2": "Frapo",
+          "admin_area_2": "Trujillo",
+          "admin_area_1": "La Libertad",
+          "postal_code": "13870",
+          "country_code": "PE"
+        }
+      },
+      "payments": {
+        "captures": [
+          {
+            "id": "51574887ED1971629",
+            "status": "COMPLETED",
+            "amount": { "currency_code": "USD", "value": "106.58" },
+            "final_capture": true,
+            "seller_protection": {
+              "status": "ELIGIBLE",
+              "dispute_categories": [
+                "ITEM_NOT_RECEIVED",
+                "UNAUTHORIZED_TRANSACTION"
+              ]
+            },
+            "seller_receivable_breakdown": {
+              "gross_amount": { "currency_code": "USD", "value": "106.58" },
+              "paypal_fee": { "currency_code": "USD", "value": "5.81" },
+              "net_amount": { "currency_code": "USD", "value": "100.77" }
+            },
+            "links": [
+              {
+                "href": "https://api.sandbox.paypal.com/v2/payments/captures/51574887ED1971629",
+                "rel": "self",
+                "method": "GET"
+              },
+              {
+                "href": "https://api.sandbox.paypal.com/v2/payments/captures/51574887ED1971629/refund",
+                "rel": "refund",
+                "method": "POST"
+              },
+              {
+                "href": "https://api.sandbox.paypal.com/v2/checkout/orders/99L3450307628314R",
+                "rel": "up",
+                "method": "GET"
+              }
+            ],
+            "create_time": "2025-02-19T02:30:06Z",
+            "update_time": "2025-02-19T02:30:06Z"
+          }
+        ]
+      }
+    }
+  ],
+  "payer": {
+    "name": { "given_name": "Richard", "surname": "Mostacero" },
+    "email_address": "test@gmail.com",
+    "payer_id": "UZJWX7QVQYRAS",
+    "address": { "country_code": "PE" }
+  },
+  "links": [
+    {
+      "href": "https://api.sandbox.paypal.com/v2/checkout/orders/99L3450307628314R",
+      "rel": "self",
+      "method": "GET"
+    }
+  ]
+}
