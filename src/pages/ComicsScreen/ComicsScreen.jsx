@@ -12,7 +12,7 @@ const ComicsScreen = () => {
 
     const fetchBooksApi = async () => {
       try {
-        const response = await fetch("http://localhost:3030/book/comic");
+        const response = await fetch("http://3.84.219.17:3030/book/comic");
         if (response.ok) {
           const data = await response.json();
           setBooks(data);

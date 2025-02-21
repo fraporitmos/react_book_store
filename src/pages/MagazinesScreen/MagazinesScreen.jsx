@@ -11,7 +11,7 @@ const MagazinesScreen = () => {
 
     const fetchBooksApi = async () => {
       try {
-        const response = await fetch("http://localhost:3030/book/magazine");
+        const response = await fetch("http://3.84.219.17:3030/book/magazine");
         if (response.ok) {
           const data = await response.json();
           setBooks(data);
