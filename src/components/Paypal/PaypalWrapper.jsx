@@ -39,6 +39,7 @@ export const PaypalWrapper = () => {
         currency_code: currency_code,
         valuePayment: valuePayment,
         books: cart,
+        state: "pending"
       };
       const record = await pb.collection("order").create(data);
     }
